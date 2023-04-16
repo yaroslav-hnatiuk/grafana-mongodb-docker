@@ -15,7 +15,7 @@ ADD ./custom-run.sh /custom-run.sh
 RUN apk update \
     && apk upgrade \
     && apk add --no-cache git \
-    && git clone https://github.com/JamesOsgood/mongodb-grafana $GF_PATHS_PLUGINS/mongodb-grafana \
+    && git clone https://github.com/yaroslav-hnatiuk/mongodb-grafana $GF_PATHS_PLUGINS/mongodb-grafana \
     && sed -i 's/grafana-mongodb-datasource/jamesosgood-grafana-mongodb-datasource/g' $GF_PATHS_PLUGINS/mongodb-grafana/dist/plugin.json \
     && rm -rf $GF_PATHS_PLUGINS/mongodb-grafana/.git \
     && npm install --silent --prefix $GF_PATHS_PLUGINS/mongodb-grafana \
